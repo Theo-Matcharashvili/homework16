@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>javascript</title>
+	</head>
+	<body>
+		<h5> 1. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს ერთ მთელ რიცხვს და დააბრუნებს true -ს თუ რიცხვი არის კენტი ან false -ს თუ რიცხვი არის ლუწი.</h5>
+		<h5> 2. დაწერეთ ფუნქცია, getCurrencySymbolFromCode რომელიც პარამეტრად მიიღებს ვალუტის კოდს (USD ან EUR ან GEL) სტრინგის სახით და დააბრუნებს ამ კოდის შესაბამის სიმბოლოს ($, €, ლ) თუ ისეთი კოდს გადავცემ რომლის სიმბოლოც არ მაქვს დააბრუნოს კოდი</h5>
+		<h5> 3. დაწერეთ ფუნქცია, რომელიც მიიღებს UpperCase სტრინგს მაგ (MY NAME IS JOHN) და დააბრუნებს LowerCase (my name is john) სტრინგს</h5>
+		<h5> 4. დაწერეთ ფუნქცია, რომელიც მიიღებს რიცხვების მასივს და დააბრუნებს გაფილტრულ მასივს .filter სადაც მხოლოდ ლუწი რიცხვები იქნება</h5>
+		<h5> 5. დაწერეთ ფუნქცია, რომელიც მიიღებს ობიექტების მასივს (ობიექტს უნდა ქონდეს ველი name) და მეორე პარამეტრად მიიღებს სტრინგს და ამ მასივში .find ით მოვძებნოთ ობიექტის name === ფუნქციის მეორე პარამეტრს და დავაბრუნოთ ნაპოვნი ობიექტი</h5>
+
+		<script>
+//task 1
+			function oddOrEven(num){
+				if (num% 2==0) {
+					return "even"
+				}
+				else {
+					return "odd"
+				}
+			}
+			console.log( oddOrEven(4))
+//task2		
+			function getCurrencySymbolFromCode(str){
+				if (str === "USD"){
+					return "$";
+				}else if (str === "EUR") {
+					return  " €";
+				}else if (str === "GEL") {
+					return "ლ";
+				}else {
+					return "IDK"
+				}
+			}
+			console.log (getCurrencySymbolFromCode("USD"))
+			console.log (getCurrencySymbolFromCode("GEL"))
+			console.log (getCurrencySymbolFromCode("EUR"))
+// task 3
+			function upperToLower(str){
+				return str.toLowerCase();
+			}
+			console.log(upperToLower("MY NAME IS JOHN")) 
+//task 4
+			let  arr=[ 1, 2, 3, 4, 5, 6, 9, 8, 10]
+			let evens=arr.filter(function(x){
+				if (x% 2==0) {
+					return x
+				}
+			})
+			console.log(evens)
+//task 5
+			let people=[{name:"Abbey", language:"English"},{name:"Mary", language:"Georgian"},{name:"David", language:"Russian"}]
+			function findElementInArrey(people){
+				return people.name==="David"
+			}
+
+			console.log(people.find(findElementInArrey).name + " speaks " + people.find(findElementInArrey).language)
+		</script>
+	</body>
+</html>
